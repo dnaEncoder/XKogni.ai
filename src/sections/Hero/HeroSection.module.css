@@ -106,8 +106,27 @@
 }
 
 @media (max-width: 960px) {
+  .hero {
+    background-image: none !important;
+  }
+
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .copy {
+    align-items: center;
+  }
+
+  .headline,
+  .paragraph,
+  .trustStrip {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .trustList {
+    justify-content: center;
   }
 }
 
