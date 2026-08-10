@@ -7,11 +7,17 @@ import App from "./App.tsx";
 import { FeedbackKitProvider } from "./feedback/FeedbackKitProvider.tsx";
 import { FeedbackWidget } from "./feedback/FeedbackWidget.tsx";
 
+const isDev = import.meta.env.DEV;
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <FeedbackKitProvider>
+    {isDev ? (
+      <FeedbackKitProvider>
+        <App />
+        <FeedbackWidget />
+      </FeedbackKitProvider>
+    ) : (
       <App />
-      <FeedbackWidget />
-    </FeedbackKitProvider>
+    )}
   </StrictMode>,
 );
