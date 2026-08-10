@@ -1,0 +1,267 @@
+/* Self-contained styles for the local feedback kit widget. Namespaced under
+   fbkit- with its own CSS variables so it never depends on (or clashes with)
+   the host project's design tokens. */
+
+.fbkitRoot {
+  --fbkit-ink: #14141a;
+  --fbkit-paper: #ffffff;
+  --fbkit-line: #e2e2e6;
+  --fbkit-muted: #6b6b74;
+  --fbkit-accent: #ff5a1f;
+  --fbkit-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9998;
+  font-family: var(--fbkit-font);
+}
+
+.fbkitToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--fbkit-ink);
+  border-radius: 999px;
+  background: var(--fbkit-ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.fbkitToggle--on {
+  background: var(--fbkit-accent);
+  border-color: var(--fbkit-accent);
+}
+
+.fbkitMenuPanel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: 240px;
+  background: var(--fbkit-paper);
+  border: 1px solid var(--fbkit-ink);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fbkitMenuHeader {
+  padding: 4px 6px 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--fbkit-line);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fbkit-ink);
+}
+
+.fbkitNameLabel {
+  font-size: 11px;
+  color: var(--fbkit-muted);
+  padding: 0 6px;
+}
+
+.fbkitNameInput {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid var(--fbkit-line);
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-family: var(--fbkit-font);
+  margin: 4px 0 6px;
+  box-sizing: border-box;
+}
+
+.fbkitMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 8px;
+  border: none;
+  background: none;
+  color: var(--fbkit-ink);
+  font-size: 13px;
+  font-family: var(--fbkit-font);
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.fbkitMenuItem:hover {
+  background: #f4f4f6;
+}
+
+.fbkitMenuItem--active {
+  color: var(--fbkit-accent);
+}
+
+.fbkitMenuItemState {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fbkit-muted);
+}
+
+.fbkitMenuItem--active .fbkitMenuItemState {
+  color: var(--fbkit-accent);
+}
+
+.fbkitLinkButton {
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  color: var(--fbkit-muted);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--fbkit-font);
+}
+
+.fbkitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--fbkit-ink);
+  border-radius: 6px;
+  background: var(--fbkit-ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fbkit-font);
+}
+
+.fbkitBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.fbkitPinLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9990;
+}
+
+.fbkitPin {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background: var(--fbkit-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--fbkit-font);
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fbkitPickerBox {
+  position: fixed;
+  border: 2px solid var(--fbkit-accent);
+  background: rgba(255, 90, 31, 0.12);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 9995;
+}
+
+.fbkitPickerLabel {
+  position: fixed;
+  background: var(--fbkit-ink);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--fbkit-font);
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 9996;
+}
+
+.fbkitPopoverBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.fbkitPopover {
+  position: absolute;
+  width: 280px;
+  background: var(--fbkit-paper);
+  border: 1px solid var(--fbkit-ink);
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transform: translate(-12px, 12px);
+  font-family: var(--fbkit-font);
+}
+
+.fbkitPopoverLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fbkit-muted);
+  margin: 0 0 8px;
+}
+
+.fbkitPopover textarea {
+  width: 100%;
+  border: 1px solid var(--fbkit-line);
+  border-radius: 6px;
+  padding: 8px;
+  font-family: var(--fbkit-font);
+  font-size: 13px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.fbkitPopoverActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fbkitViewNote {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  white-space: pre-wrap;
+  color: var(--fbkit-ink);
+}
+
+.fbkitViewMeta {
+  font-size: 11px;
+  color: var(--fbkit-muted);
+  margin: 0;
+}
+
+.fbkitError {
+  color: var(--fbkit-accent);
+  font-size: 12px;
+}

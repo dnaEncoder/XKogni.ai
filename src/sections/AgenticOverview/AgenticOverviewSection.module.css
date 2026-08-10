@@ -1,0 +1,126 @@
+.section {
+  text-align: center;
+  background-image: url('/agentic-overview-section.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding-block: clamp(1rem, 2vw, 2rem) !important;
+}
+
+.header {
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 1rem 0 0;
+  font-size: clamp(2.2rem, 4.4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.paragraph {
+  max-width: 32rem;
+  margin: 1.25rem auto 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.7;
+}
+
+.visual {
+  position: relative;
+  min-height: clamp(24rem, 45vw, 32rem);
+  display: grid;
+  place-items: center;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.cardGrid {
+  position: absolute;
+  inset: 0;
+}
+
+.agentCard {
+  position: absolute;
+  width: min(18rem, 24vw);
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-card);
+  background: var(--surface-translucent);
+  backdrop-filter: blur(14px);
+  text-align: left;
+}
+
+.agentCard[data-position="top-left"] {
+  top: 18%;
+  left: 10%;
+}
+
+.agentCard[data-position="top-right"] {
+  top: 18%;
+  right: 10%;
+}
+
+.agentCard[data-position="bottom-left"] {
+  bottom: 18%;
+  left: 10%;
+}
+
+.agentCard[data-position="bottom-right"] {
+  bottom: 18%;
+  right: 10%;
+}
+
+.agentIcon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 106, 0, 0.1);
+  color: var(--accent-primary);
+}
+
+.agentLabel {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .section {
+    background-image: none !important;
+  }
+
+  .visual {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .cardGrid {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .agentCard {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}

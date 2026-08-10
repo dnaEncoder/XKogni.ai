@@ -1,0 +1,132 @@
+.gap {
+  text-align: center;
+}
+
+.eyebrow {
+  justify-content: center;
+}
+
+.heading {
+  margin-inline: auto;
+}
+
+.paragraph {
+  margin-inline: auto;
+}
+
+.transition {
+  max-width: var(--text-width);
+  margin: 2rem auto 0;
+  color: var(--text-primary);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  text-align: left;
+}
+
+.card {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-card);
+  background: var(--surface-primary);
+  overflow: clip;
+  transition:
+    transform var(--motion-medium) var(--ease-standard),
+    box-shadow var(--motion-medium) var(--ease-standard),
+    border-color var(--motion-medium) var(--ease-standard);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255, 106, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(255, 106, 0, 0.22);
+  color: var(--accent-primary);
+}
+
+.sequence {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.divider {
+  width: 1.75rem;
+  height: 1px;
+  margin: 1.25rem 0;
+  background: var(--border-strong);
+}
+
+.cardHeading {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.cardSubheading {
+  margin: 0.4rem 0 0;
+  color: var(--accent-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cardDivider {
+  height: 1px;
+  margin: 1.1rem 0;
+  background: var(--border-default);
+}
+
+.cardBody {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
