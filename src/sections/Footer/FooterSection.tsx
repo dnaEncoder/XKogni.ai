@@ -43,7 +43,7 @@ export function FooterSection() {
       <div className={styles.container}>
         <div className={styles.upperGrid}>
           <div className={styles.brandColumn} data-review-id={IDS.footer.brandBlock}>
-            <p className={styles.brandName}>XKogni.ai</p>
+            <img src="/XKOGNI-LOGO.svg" alt="XKogni.ai" className={styles.brandLogo} />
             <p className={styles.brandTagline}>
               Agentic AI for document operations.
               <br />

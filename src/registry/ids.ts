@@ -24,8 +24,6 @@ export const IDS = {
     ctaSecondary: "xc-hero.cta-secondary",
     trustStatement: (n: number) => `xc-hero.trust-statement-${pad(n)}`,
     trustStripLabel: "xc-hero.trust-strip-label",
-    flowInputNode: (n: number) => `xc-hero.flow-input-node-${pad(n)}`,
-    flowOutputNode: (n: number) => `xc-hero.flow-output-node-${pad(n)}`,
   },
   operationalGap: {
     root: "xc-operational-gap",
@@ -97,7 +95,6 @@ export const IDS = {
     eyebrow: "xc-agentic.eyebrow",
     heading: "xc-agentic.heading",
     paragraph: "xc-agentic.paragraph",
-    centerLabel: "xc-agentic.center-label",
     capabilityCard: (n: number) => `xc-agentic.capability-card-${pad(n)}`,
   },
   deploymentSecurity: {

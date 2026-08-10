@@ -63,6 +63,11 @@
         "date": "2026-08-05",
         "change": "Initial build from spec, static layout only (no data-stream animation yet, per Phase 4 build priority)",
         "by": "claude"
+      },
+      {
+        "date": "2026-08-10",
+        "change": "Right-column flow diagram (input/output node stacks, center mark) removed from the section; registry entries xc-hero.flow-core, xc-hero.flow-input-node-*, xc-hero.flow-output-node-* retired as orphans.",
+        "by": "claude"
       }
     ]
   },
@@ -160,36 +165,6 @@
       {
         "date": "2026-08-05",
         "change": "Initial build from spec; logo marks withheld pending verified assets",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-hero.flow-input-node-*": {
-    "component": "HeroSection",
-    "file": "src/sections/Hero/HeroSection.tsx",
-    "description": "Pattern for the 5 input node cards: Invoices, Contracts, Purchase Orders, Emails & Attachments, Supporting Records (flow-input-node-01..05).",
-    "specRef": "Spec MD \u00a73 Header and Hero \u2014 Right Column / Inputs",
-    "isPattern": true,
-    "count": 5,
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec, static card only (animated data streams deferred to Phase 4)",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-hero.flow-output-node-*": {
-    "component": "HeroSection",
-    "file": "src/sections/Hero/HeroSection.tsx",
-    "description": "Pattern for the 5 output node cards: Validated Data, Identified Exceptions, Recommended Actions, Approval Tasks, System Updates (flow-output-node-01..05).",
-    "specRef": "Spec MD \u00a73 Header and Hero \u2014 Right Column / Outputs",
-    "isPattern": true,
-    "count": 5,
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec, static card only (animated data streams deferred to Phase 4)",
         "by": "claude"
       }
     ]
@@ -1011,12 +986,17 @@
   "xc-agentic": {
     "component": "AgenticOverviewSection",
     "file": "src/sections/AgenticOverview/AgenticOverviewSection.tsx",
-    "description": "Agentic Overview section root: centered header + conceptual visual (central Control Core with orbit rings and 4 corner-positioned capability cards).",
+    "description": "Agentic Overview section root: centered header + conceptual visual (4 corner-positioned capability cards).",
     "specRef": "Spec MD \u00a710 Agentic Overview",
     "changelog": [
       {
         "date": "2026-08-05",
         "change": "Initial build from spec",
+        "by": "claude"
+      },
+      {
+        "date": "2026-08-10",
+        "change": "Central Control Core orbit visual removed from the section; registry entry xc-agentic.center-label retired as an orphan.",
         "by": "claude"
       }
     ]
@@ -1056,19 +1036,6 @@
       {
         "date": "2026-08-05",
         "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-agentic.center-label": {
-    "component": "AgenticOverviewSection",
-    "file": "src/sections/AgenticOverview/AgenticOverviewSection.tsx",
-    "description": "Central control-tower object with 'CONTROL CORE' label, brand-gradient fill (matches Hero/InvoiceX flow-core treatment), surrounded by 2 static dashed orbit rings.",
-    "specRef": "Spec MD \u00a710 Agentic Overview \u2014 Center Label / Visual Description / Construction and Animation",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec as a static gradient orb with dashed CSS orbit rings (no WebP/3D render asset available). Entry sequence (landscape fade, tower rise, orbit ring draw, card edge-entry, connection-node pulse), ambient orbit rotation, particle drift, and tower light pulse deferred to Phase 3/4 per spec's own animation section, consistent with other sections in this build pass.",
         "by": "claude"
       }
     ]
