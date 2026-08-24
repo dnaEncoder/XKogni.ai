@@ -26,3 +26,8 @@ dist-ssr
 # Feedback widget local DB
 feedback-server/feedback.db
 feedback-server/feedback.db-*
+
+# Production feedback system secrets (DATABASE_URL, SMTP credentials)
+.env
+.vercel
+.env*

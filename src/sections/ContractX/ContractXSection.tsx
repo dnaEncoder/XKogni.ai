@@ -62,7 +62,11 @@ const STATUS_MESSAGE: Record<string, string> = {
   Pending: "Awaiting reviewer action.",
 };
 
-export function ContractXSection() {
+interface ContractXSectionProps {
+  onContactClick?: () => void;
+}
+
+export function ContractXSection({ onContactClick }: ContractXSectionProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(DEFAULT_ACTIVE_STEP);
 
@@ -73,6 +77,7 @@ export function ContractXSection() {
 
   return (
     <SectionWrapper
+      id="contractx"
       theme="light"
       reviewId={IDS.contractX.root}
       ariaLabelledBy="contractx-heading"
@@ -96,9 +101,6 @@ export function ContractXSection() {
             must happen next, and evaluate activity against the right terms.
           </p>
         </div>
-        <a href="#contractx" className={styles.cta} data-review-id={IDS.contractX.cta}>
-          Explore the platform
-        </a>
       </div>
 
       <div className={styles.featureGrid}>
@@ -217,16 +219,14 @@ export function ContractXSection() {
           {closingStatement}
         </p>
         <div className={styles.closingCtaRow}>
-          <a href="#demo" className={styles.ctaPrimary} data-review-id={IDS.contractX.ctaPrimary}>
-            See it in action
-          </a>
-          <a
-            href="#platform"
-            className={styles.ctaSecondary}
-            data-review-id={IDS.contractX.ctaSecondary}
+          <button
+            type="button"
+            onClick={onContactClick}
+            className={styles.ctaPrimary}
+            data-review-id={IDS.contractX.ctaPrimary}
           >
-            Explore the platform
-          </a>
+            See it in action
+          </button>
         </div>
       </div>
     </SectionWrapper>

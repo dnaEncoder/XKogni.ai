@@ -48,6 +48,7 @@ export function EnterpriseIntegrationsSection() {
 
   return (
     <SectionWrapper
+      id="integrations"
       theme="light"
       reviewId={IDS.enterpriseIntegrations.root}
       ariaLabelledBy="integrations-heading"
@@ -103,9 +104,6 @@ export function EnterpriseIntegrationsSection() {
                     <div className={styles.divider} aria-hidden="true" />
                     <p className={styles.category}>{card.category}</p>
                     <p className={styles.description}>{card.description}</p>
-                    <a href="#integrations" className={styles.learnMore}>
-                      Learn more
-                    </a>
                   </article>
                 </div>
               );

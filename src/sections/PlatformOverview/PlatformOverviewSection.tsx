@@ -56,9 +56,14 @@ const ICONS: Record<PlatformIconName, PlatformIcon> = {
   Bell,
 };
 
-export function PlatformOverviewSection() {
+interface PlatformOverviewSectionProps {
+  onContactClick?: () => void;
+}
+
+export function PlatformOverviewSection({ onContactClick }: PlatformOverviewSectionProps) {
   return (
     <SectionWrapper
+      id="platform"
       theme="dark"
       reviewId={IDS.platformOverview.root}
       ariaLabelledBy="platform-overview-heading"
@@ -253,20 +258,14 @@ export function PlatformOverviewSection() {
           One view of the work. One record of how every decision was reached.
         </p>
         <div className={styles.closingCtas}>
-          <a
-            href="#platform"
+          <button
+            type="button"
+            onClick={onContactClick}
             className={styles.ctaPrimary}
-            data-review-id={IDS.platformOverview.ctaPrimary}
-          >
-            Explore the platform
-          </a>
-          <a
-            href="#demo"
-            className={styles.ctaSecondary}
             data-review-id={IDS.platformOverview.ctaSecondary}
           >
             See XKogni.ai in action
-          </a>
+          </button>
         </div>
       </div>
     </SectionWrapper>

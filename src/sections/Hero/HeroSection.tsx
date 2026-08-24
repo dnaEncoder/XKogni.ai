@@ -39,7 +39,11 @@ const ICONS: Record<HeroIconName, typeof Receipt> = {
 };
 
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
+export function HeroSection({ onContactClick }: HeroSectionProps) {
   return (
     <SectionWrapper
       theme="dark"
@@ -65,16 +69,14 @@ export function HeroSection() {
           </p>
 
           <div className={styles.ctaRow}>
-            <a href="#demo" className={styles.ctaPrimary} data-review-id={IDS.hero.ctaPrimary}>
-              See XKogni.ai in action
-            </a>
-            <a
-              href="#platform"
-              className={styles.ctaSecondary}
-              data-review-id={IDS.hero.ctaSecondary}
+            <button
+              type="button"
+              onClick={onContactClick}
+              className={styles.ctaPrimary}
+              data-review-id={IDS.hero.ctaPrimary}
             >
-              Explore the platform
-            </a>
+              See XKogni.ai in action
+            </button>
           </div>
 
           <ul className={styles.trustList}>

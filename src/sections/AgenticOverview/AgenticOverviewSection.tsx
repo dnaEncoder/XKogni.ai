@@ -13,6 +13,7 @@ const VISUAL_SUMMARY =
 export function AgenticOverviewSection() {
   return (
     <SectionWrapper
+      id="agentic"
       theme="dark"
       reviewId={IDS.agenticOverview.root}
       ariaLabelledBy="agentic-heading"

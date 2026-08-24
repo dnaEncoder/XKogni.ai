@@ -1125,12 +1125,17 @@
   "xc-footer": {
     "component": "FooterSection",
     "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Footer landmark root: 5-column upper nav (wide brand column + Platform/Solutions/Resources/Company), decorative animated data wave behind the lower half, full-width newsletter panel, and legal/status bottom bar.",
+    "description": "Footer landmark root: bold brand block on one side, enquiry heading + CTA on the other, decorative animated data wave behind the lower half, and status/copyright bottom bar. No internal link navigation.",
     "specRef": "Spec MD \u00a712 Footer",
     "changelog": [
       {
         "date": "2026-08-05",
         "change": "Initial build from spec. Rendered as a semantic <footer> landmark rather than via SectionWrapper (which renders <section>) since this is the page's footer, not a homepage content section \u2014 an intentional, documented deviation from the section-root pattern used elsewhere.",
+        "by": "claude"
+      },
+      {
+        "date": "2026-08-24",
+        "change": "Redesigned: removed the 4-column link navigation and the simulated newsletter panel (site has too few real destinations for a wide nav footer, and the newsletter endpoint was never real). Replaced with a simpler, bolder layout that highlights the logo and drives to the real contact/enquiry action (ContactModal).",
         "by": "claude"
       }
     ]
@@ -1163,108 +1168,28 @@
       }
     ]
   },
-  "xc-footer.nav-column-*": {
+  "xc-footer.enquiry-heading": {
     "component": "FooterSection",
     "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Pattern for the 4 navigation columns: Platform, Solutions, Resources, Company, each with its listed links.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Platform / Solutions / Resources / Company",
-    "isPattern": true,
-    "count": 4,
+    "description": "Bold heading driving to the enquiry CTA, e.g. 'Ready to see XKogni.ai in action?'.",
+    "specRef": "Spec MD \u00a712 Footer (redesigned)",
     "changelog": [
       {
-        "date": "2026-08-05",
-        "change": "Initial build from spec. Nav link hrefs are same-page anchor placeholders (#platform, #solutions, etc.) pending real destination pages/routes.",
+        "date": "2026-08-24",
+        "change": "Added as part of the footer redesign, replacing the 4-column nav and the simulated newsletter panel with a single bold enquiry heading + CTA that opens the real ContactModal.",
         "by": "claude"
       }
     ]
   },
-  "xc-footer.newsletter-panel": {
+  "xc-footer.enquiry-cta": {
     "component": "FooterSection",
     "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Full-width newsletter capture panel: heading, body copy, email input, and Subscribe button with idle/loading/success/error states.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Newsletter / Footer Functionality",
+    "description": "Primary enquiry CTA button ('Get in touch'), opens the real ContactModal via onContactClick.",
+    "specRef": "Spec MD \u00a712 Footer (redesigned)",
     "changelog": [
       {
-        "date": "2026-08-05",
-        "change": "Initial build from spec's exact state shape (idle/loading/success/error). Client-side email validation and disabled-during-submit implemented; the actual CRM/newsletter endpoint is not wired up yet \u2014 submission is simulated with a timed delay so the interaction states are exercised, flagged for replacement with a real integration.",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-heading": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Newsletter heading: 'Stay updated with XCogni.ai'.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Newsletter",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-body": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Newsletter body copy.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Newsletter",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-input": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Newsletter email input, placeholder 'Enter your work email'.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Newsletter",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-submit": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Newsletter submit button: 'Subscribe' (shows 'Subscribing\u2026' and disables during the loading state).",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Newsletter",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-success": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Success message shown after a successful (simulated) subscription.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Footer Functionality (success message)",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec. Message copy is original UI microcopy \u2014 spec requires a success state but does not provide its text.",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.newsletter-error": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Error message shown on invalid email submission.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Footer Functionality (error message)",
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec. Message copy is original UI microcopy \u2014 spec requires an error state but does not provide its text.",
+        "date": "2026-08-24",
+        "change": "Added as part of the footer redesign.",
         "by": "claude"
       }
     ]
@@ -1291,21 +1216,6 @@
       {
         "date": "2026-08-05",
         "change": "Initial build from spec",
-        "by": "claude"
-      }
-    ]
-  },
-  "xc-footer.legal-link-*": {
-    "component": "FooterSection",
-    "file": "src/sections/Footer/FooterSection.tsx",
-    "description": "Pattern for the 4 bottom-bar legal/status links: Privacy Policy, Terms of Service, Trust Center, Status.",
-    "specRef": "Spec MD \u00a712 Footer \u2014 Bottom Bar",
-    "isPattern": true,
-    "count": 4,
-    "changelog": [
-      {
-        "date": "2026-08-05",
-        "change": "Initial build from spec. Spec's 'Only display verified compliance badges' note applies to compliance badges, none of which are included in this build pass pending verification.",
         "by": "claude"
       }
     ]

@@ -2,9 +2,10 @@
   position: relative;
   overflow: clip;
   padding-block: var(--section-space-lg);
+  scroll-margin-top: 5rem;
   color: var(--text-primary);
   background: var(--background-section);
-  
+
   /* Initial transition state */
   opacity: 0;
   transform: translateY(2rem);

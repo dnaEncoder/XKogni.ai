@@ -13,6 +13,7 @@ const ICONS: Record<DeploymentIconName, DeploymentIcon> = { KeyRound, Sliders, S
 export function DeploymentSecuritySection() {
   return (
     <SectionWrapper
+      id="security"
       theme="dark"
       reviewId={IDS.deploymentSecurity.root}
       ariaLabelledBy="deployment-heading"

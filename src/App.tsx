@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { SiteHeader } from "./components/SiteHeader/SiteHeader";
 import { HeroSection } from "./sections/Hero/HeroSection";
 import { OperationalGapSection } from "./sections/OperationalGap/OperationalGapSection";
@@ -8,23 +10,40 @@ import { EnterpriseIntegrationsSection } from "./sections/EnterpriseIntegrations
 import { AgenticOverviewSection } from "./sections/AgenticOverview/AgenticOverviewSection";
 import { DeploymentSecuritySection } from "./sections/DeploymentSecurity/DeploymentSecuritySection";
 import { FooterSection } from "./sections/Footer/FooterSection";
+import FeedbackLoginPage from "./feedback/production/FeedbackLoginPage.tsx";
+import FeedbackVerifyPage from "./feedback/production/FeedbackVerifyPage.tsx";
+import { ContactModal } from "./components/ContactModal/ContactModal";
 
-function App() {
+function HomePage() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const handleOpenContact = () => setIsContactOpen(true);
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader onContactClick={handleOpenContact} />
       <main>
-        <HeroSection />
+        <HeroSection onContactClick={handleOpenContact} />
         <OperationalGapSection />
         <ProblemFiguresSection />
-        <PlatformOverviewSection />
-        <ContractXSection />
+        <PlatformOverviewSection onContactClick={handleOpenContact} />
+        <ContractXSection onContactClick={handleOpenContact} />
         <EnterpriseIntegrationsSection />
         <AgenticOverviewSection />
         <DeploymentSecuritySection />
       </main>
-      <FooterSection />
+      <FooterSection onContactClick={handleOpenContact} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/feedback" element={<FeedbackLoginPage />} />
+      <Route path="/feedback/verify" element={<FeedbackVerifyPage />} />
+    </Routes>
   );
 }
 
