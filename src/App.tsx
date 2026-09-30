@@ -8,6 +8,7 @@ import { PlatformOverviewSection } from "./sections/PlatformOverview/PlatformOve
 import { ContractXSection } from "./sections/ContractX/ContractXSection";
 import { EnterpriseIntegrationsSection } from "./sections/EnterpriseIntegrations/EnterpriseIntegrationsSection";
 import { AgenticOverviewSection } from "./sections/AgenticOverview/AgenticOverviewSection";
+import { SecurityGovernanceSection } from "./sections/SecurityGovernance/SecurityGovernanceSection";
 import { DeploymentSecuritySection } from "./sections/DeploymentSecurity/DeploymentSecuritySection";
 import { FooterSection } from "./sections/Footer/FooterSection";
 import FeedbackLoginPage from "./feedback/production/FeedbackLoginPage.tsx";
@@ -29,6 +30,7 @@ function HomePage() {
         <ContractXSection onContactClick={handleOpenContact} />
         <EnterpriseIntegrationsSection />
         <AgenticOverviewSection />
+        <SecurityGovernanceSection />
         <DeploymentSecuritySection />
       </main>
       <FooterSection onContactClick={handleOpenContact} />

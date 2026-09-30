@@ -104,6 +104,13 @@ export const IDS = {
     paragraph: "xc-deployment-security.paragraph",
     card: (n: number) => `xc-deployment-security.card-${pad(n)}`,
   },
+  securityGovernance: {
+    root: "xc-security-governance",
+    eyebrow: "xc-security-governance.eyebrow",
+    heading: "xc-security-governance.heading",
+    paragraph: "xc-security-governance.paragraph",
+    card: (n: number) => `xc-security-governance.card-${pad(n)}`,
+  },
   footer: {
     root: "xc-footer",
     brandBlock: "xc-footer.brand-block",

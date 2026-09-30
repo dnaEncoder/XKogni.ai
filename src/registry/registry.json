@@ -1122,6 +1122,73 @@
       }
     ]
   },
+  "xc-security-governance": {
+    "component": "SecurityGovernanceSection",
+    "file": "src/sections/SecurityGovernance/SecurityGovernanceSection.tsx",
+    "description": "Security Governance light theme section: header and 8 content cards covering Data Residency, Auditable AI, Access Controls, App Security, AI Threat Protection, Fraud Prevention, Resilience & Recovery, Compliance.",
+    "specRef": "User Request — Data Residency & Protection, Security Governance",
+    "changelog": [
+      {
+        "date": "2026-09-30",
+        "change": "Created section after #agentic per user request",
+        "by": "antigravity"
+      }
+    ]
+  },
+  "xc-security-governance.eyebrow": {
+    "component": "SecurityGovernanceSection",
+    "file": "src/sections/SecurityGovernance/SecurityGovernanceSection.tsx",
+    "description": "Eyebrow label: 'SECURITY & PROTECTION'.",
+    "specRef": "User Request",
+    "changelog": [
+      {
+        "date": "2026-09-30",
+        "change": "Created section after #agentic per user request",
+        "by": "antigravity"
+      }
+    ]
+  },
+  "xc-security-governance.heading": {
+    "component": "SecurityGovernanceSection",
+    "file": "src/sections/SecurityGovernance/SecurityGovernanceSection.tsx",
+    "description": "Section heading with highlighted text.",
+    "specRef": "User Request",
+    "changelog": [
+      {
+        "date": "2026-09-30",
+        "change": "Created section after #agentic per user request",
+        "by": "antigravity"
+      }
+    ]
+  },
+  "xc-security-governance.paragraph": {
+    "component": "SecurityGovernanceSection",
+    "file": "src/sections/SecurityGovernance/SecurityGovernanceSection.tsx",
+    "description": "Supporting paragraph for security governance.",
+    "specRef": "User Request",
+    "changelog": [
+      {
+        "date": "2026-09-30",
+        "change": "Created section after #agentic per user request",
+        "by": "antigravity"
+      }
+    ]
+  },
+  "xc-security-governance.card-*": {
+    "component": "SecurityGovernanceSection",
+    "file": "src/sections/SecurityGovernance/SecurityGovernanceSection.tsx",
+    "description": "Pattern for the 8 security content cards (Data Residency & Protection, Responsible Auditable AI, Access Controls, Application Security, AI Threat Protection, Fraud Prevention, Resilience & Recovery, Compliance).",
+    "specRef": "User Request",
+    "isPattern": true,
+    "count": 8,
+    "changelog": [
+      {
+        "date": "2026-09-30",
+        "change": "Created section after #agentic per user request",
+        "by": "antigravity"
+      }
+    ]
+  },
   "xc-footer": {
     "component": "FooterSection",
     "file": "src/sections/Footer/FooterSection.tsx",
